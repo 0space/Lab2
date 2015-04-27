@@ -128,6 +128,10 @@ class Lab2(server.App):
 		df = pd.read_csv('data/vhi_id_%s.csv'%ticker1,index_col=False, header=1)
 		if year!=0:
 			w=df[df['year']==year]
+			a = w[df["week"]<=max ]
+			b=a[df["week"]>=min]
+			c = b[df['year']!=0]
+			z=c[df['VHI']!=-1]
 		else:
 			w=df
 		x=w[[ticker2]]
